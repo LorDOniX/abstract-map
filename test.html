@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, minimal-ui" />
+		<meta charset="utf-8" />
+		<meta name="description" content="Testování" />
+		<title>Testování</title>
+
+		<script type="text/javascript" src="https://api.mapy.dev.dszn.cz/loader.js"></script>
+		<script type="text/javascript">Loader.load(null, { poi: true });</script>
+
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+
+		<script type="text/javascript" src='./dist/roman.js'></script>
+	</head>
+	<body>
+		<div id="map" style="height:600px"></div>
+		<div>
+			<button id="setTileUrlBtn">Nastavit podklad</button>
+			<input type="text" id="tileUrlInput" value="https://mapserver.mapy.dev.dszn.cz/bing/" />
+			<button id="setPosBtn">Nastavit pozici</button>
+			<button id="createMarker">Vytvořit marker</button>
+			<button id="createBtn">Vytvořit mapu</button>
+		</div>
+		<script type="text/javascript">
+			const library = Roman.main();
+
+			document.querySelector("#setTileUrlBtn").addEventListener("click", () => {
+				const urlValue = document.querySelector("#tileUrlInput").value.trim();
+
+				library.setTileUrl(urlValue);
+			});
+			document.querySelector("#setPosBtn").addEventListener("click", () => {
+				library.setPosition(16.5557664, 49.1761523, 17);
+			});
+			document.querySelector("#createMarker").addEventListener("click", () => {
+				library.createMarker();
+			});
+			document.querySelector("#createBtn").addEventListener("click", () => {
+				library.create();
+			});
+		</script>
+	</body>
+</html>

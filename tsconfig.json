@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+  		"emitDeclarationOnly": true,
+		"allowJs": true,
+		"checkJs": true,
+		"sourceMap": true,
+		"target": "ESNext",
+		"outDir": "dist",
+		"baseUrl": "./src/",
+		"paths": {
+			"~/*": ["./*"]
+		},
+		"moduleResolution": "node"
+	},
+	"include": ["./src/**/*.ts"]
+}
